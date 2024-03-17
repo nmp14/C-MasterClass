@@ -19,6 +19,9 @@
                 Console.WriteLine("Only numbers are valid!\r\n\n");
                 Program.Exit(1);
             }
+            Console.WriteLine("Unknown error occured");
+            Console.WriteLine(ex);
+            Program.Exit(2);
         }
 
         Console.WriteLine("What do you want to do with those numbers?\r\n[A]dd\r\n[S]ubtract\r\n[M]ultiply\r\n");
@@ -37,11 +40,14 @@
                 calc.Subtract();
                 break;
             default:
-                Console.WriteLine("Invalid options.");
+                Console.WriteLine("Invalid option.");
                 break;
         }
 
-        Program.Exit(2);
+        Program.ShouldCalculateAgain();
+
+        // Shouldnt make it here but just in case
+        Program.Exit(0);
     }
 
     private static void Exit(int exitCode)
@@ -49,6 +55,26 @@
         Console.WriteLine("Press any key to exit\r\n");
         Console.ReadKey();
         Environment.Exit(exitCode);
+    }
+
+    private static void ShouldCalculateAgain()
+    {
+        Console.WriteLine("Calculate Again? [Y/y] or [N/n]\r\n ");
+        string calcAgainResponse = Console.ReadLine()!;
+
+        switch (calcAgainResponse.ToLower())
+        {
+            case "y":
+                Program.Main([]);
+                break;
+            case "n":
+                Program.Exit(0);
+                break;
+            default:
+                Console.WriteLine("Invalid option.");
+                Program.Exit(3);
+                break;
+        }
     }
 }
 
