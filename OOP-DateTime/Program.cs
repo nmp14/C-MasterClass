@@ -23,6 +23,26 @@
         Console.WriteLine("Day of the week is " + internationalPizzaDay2024.DayOfWeek);
         Console.WriteLine("\n");
 
+        Rectangle rectangle = new Rectangle(5, 6);
+
+        Console.WriteLine($"area of rectangle: {rectangle.Area()}");
+
         Console.ReadKey();
+    }
+}
+
+class Rectangle
+{
+    private int width;
+    private int height;
+    public Rectangle(int width, int height)
+    {
+        this.width = width;
+        this.height = height;
+    }
+
+    public int Area()
+    {
+        return this.width * this.height;
     }
 }
