@@ -33,16 +33,16 @@
 
 class Rectangle
 {
-    private int width;
-    private int height;
+    private int _width;
+    private int _height;
     public Rectangle(int width, int height)
     {
-        this.width = width;
-        this.height = height;
+        this._width = width;
+        this._height = height;
     }
 
     public int Area()
     {
-        return this.width * this.height;
+        return this._width * this._height;
     }
 }
