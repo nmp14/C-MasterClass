@@ -33,8 +33,13 @@
 
 class Rectangle
 {
-    private int _width;
-    private int _height;
+    // Has to be assigned value here, cant in constructor.
+    // Cant be assigned result of method due to needing to know value at compile time, not run time.
+    const int NumberOfSides = 4;
+    // Can be assigned in constructor so does not need value here necessarily.
+    readonly int NumberOfSidesReadOnly = 4;
+    private readonly int _width;
+    private readonly int _height;
     public Rectangle(int width, int height)
     {
         this._width = DefaultIfNonPositive(width, nameof(_width));
@@ -43,7 +48,7 @@ class Rectangle
 
     private int DefaultIfNonPositive(int value, string name)
     {
-        var defaultValue = 1;
+        const int defaultValue = 1;
 
         if (value <= 0)
         {
