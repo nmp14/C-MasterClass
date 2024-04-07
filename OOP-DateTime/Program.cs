@@ -37,8 +37,20 @@ class Rectangle
     private int _height;
     public Rectangle(int width, int height)
     {
-        this._width = width;
-        this._height = height;
+        this._width = DefaultIfNonPositive(width, nameof(_width));
+        this._height = DefaultIfNonPositive(height, nameof(_height));
+    }
+
+    private int DefaultIfNonPositive(int value, string name)
+    {
+        var defaultValue = 1;
+
+        if (value <= 0)
+        {
+            Console.WriteLine($"{name} cannot be non positive.");
+            return defaultValue;
+        }
+        return value;
     }
 
     public int Area()
