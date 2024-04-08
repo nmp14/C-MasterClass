@@ -28,6 +28,15 @@
         var test = rectangle.Width;
         Console.WriteLine($"area of rectangle: {rectangle.Area()}");
 
+        // Traditional way to make new instance of a class
+        var person = new Person("John", 1981);
+        // Object initializer. Dont have to use all fields. Will use a default if not included.
+        var person2 = new Person
+        {
+            Name = "John",
+            YearOfBirth = 1981,
+        };
+
         Console.ReadKey();
     }
 }
@@ -99,3 +108,19 @@ class Rectangle
 //Fields have no separate getter and setter while properties getter or setter can be removed
 // Fields cannot be overriden in derived classes while properties can.
 // Fields should always be private, properties can safely be public.
+
+class Person
+{
+    public string Name { get; set; }
+    // Init allows to set value only in obj initializer but not after.
+    public int YearOfBirth { get; init; }
+
+    // Dont need constructor with obj initializer
+    //public Person(string name, int yearOfBirth)
+    //{
+    //    Name = name;
+    //    YearOfBirth = yearOfBirth;
+    //}
+
+    // Constructor requires all required parameters while initializer does not. Constructors are more commonly used.
+}
