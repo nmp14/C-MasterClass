@@ -1,4 +1,5 @@
-﻿using SRP_SingleResponsibilityPrinciple.DataAccess;
+﻿global using System.Diagnostics;
+using SRP_SingleResponsibilityPrinciple.DataAccess;
 using SRP_SingleResponsibilityPrinciple.Helpers;
 
 // A class should only have 1 responsibility. Part of SOLID
@@ -33,6 +34,16 @@ internal class Program
             stringsTextualRepository.Write(path, names.All);
         }
         Console.WriteLine(new NamesFormatter().Format(names.All));
+
+        var stopWatch = Stopwatch.StartNew();
+
+        for (int i = 0; i < 10000; i++)
+        {
+            Console.WriteLine($"Loop number {i}");
+        }
+        stopWatch.Stop();
+        Console.WriteLine($"Time in seconds: {stopWatch.ElapsedMilliseconds/1000.0}");
+
         Console.ReadKey();
     }
 }
