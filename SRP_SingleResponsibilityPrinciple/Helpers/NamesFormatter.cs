@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRP_SingleResponsibilityPrinciple.Helpers
+namespace SRP_SingleResponsibilityPrinciple.Helpers;
+
+class NamesFormatter
 {
-    class NamesFormatter
+    public string Format(List<string> names)
     {
-        public string Format(List<string> names)
-        {
-            return string.Join(Environment.NewLine + "-----" + Environment.NewLine, names);
-        }
+        return string.Join(Environment.NewLine + "-----" + Environment.NewLine, names);
     }
 }

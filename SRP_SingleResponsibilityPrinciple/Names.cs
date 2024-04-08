@@ -1,4 +1,6 @@
-﻿class Names
+﻿using SRP_SingleResponsibilityPrinciple.Helpers;
+
+class Names
 {
     public List<string> All { get; } = new List<string>();
     private readonly NameValidator _nameValidator = new NameValidator();

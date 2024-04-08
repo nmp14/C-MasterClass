@@ -1,4 +1,6 @@
-﻿class NameValidator
+﻿namespace SRP_SingleResponsibilityPrinciple.Helpers;
+
+class NameValidator
 {
     public bool IsValid(string name)
     {
