@@ -29,7 +29,7 @@
         Console.WriteLine($"area of rectangle: {rectangle.Area()}");
 
         // Traditional way to make new instance of a class
-        var person = new Person("John", 1981);
+        //var person = new Person("John", 1981);
         // Object initializer. Dont have to use all fields. Will use a default if not included.
         var person2 = new Person
         {
@@ -111,7 +111,7 @@ class Rectangle
 
 class Person
 {
-    public string Name { get; set; }
+    public required string Name { get; set; }
     // Init allows to set value only in obj initializer but not after.
     public int YearOfBirth { get; init; }
 
