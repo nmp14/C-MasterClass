@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using System.Text.Json;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -26,7 +28,7 @@
         Rectangle rectangle = new Rectangle(5, 6);
 
         var test = rectangle.Width;
-        Console.WriteLine($"area of rectangle: {rectangle.Area()}");
+        Console.WriteLine($"area of rectangle: {rectangle.Area()}\n");
 
         // Traditional way to make new instance of a class
         //var person = new Person("John", 1981);
@@ -36,6 +38,10 @@
             Name = "John",
             YearOfBirth = 1981,
         };
+        Console.WriteLine(JsonSerializer.Serialize(person2));
+        Console.WriteLine("");
+
+        Console.WriteLine(Calculator.Add(2,3));
 
         Console.ReadKey();
     }
@@ -126,4 +132,11 @@ class Person
     //}
 
     // Constructor requires all required parameters while initializer does not. Constructors are more commonly used.
+}
+
+public static class Calculator
+{
+    public static int Add(int a, int b) => a + b;
+    public static int Subtract(int a, int b) => a - b;
+    public static int Multiply(int a, int b) => a * b;
 }
