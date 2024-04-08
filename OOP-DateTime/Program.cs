@@ -96,10 +96,13 @@ class Rectangle
     //    set => _width = value;
     //}
 
-    public int Area()
-    {
-        return Width * _height;
-    }
+    public int CalcCircumference() => 2 * Width + 2 * _height;
+
+    public int Area() => Width * _height;
+
+    // Computer property. These should not have complex logic that can cause compilation errors or performance issues.
+    public string Description => $"A rectangle with width {Width} " +
+        $"and height {_height}";
 }
 
 // Fields vs properties
