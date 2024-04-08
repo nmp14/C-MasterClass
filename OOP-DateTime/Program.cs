@@ -25,6 +25,7 @@
 
         Rectangle rectangle = new Rectangle(5, 6);
 
+        var test = rectangle.Width;
         Console.WriteLine($"area of rectangle: {rectangle.Area()}");
 
         Console.ReadKey();
@@ -38,12 +39,12 @@ class Rectangle
     const int NumberOfSides = 4;
     // Can be assigned in constructor so does not need value here necessarily.
     readonly int NumberOfSidesReadOnly = 4;
-    private readonly int _width;
-    private readonly int _height;
+    // Called backing fields.
+    private int _height;
     public Rectangle(int width, int height)
     {
-        this._width = DefaultIfNonPositive(width, nameof(_width));
-        this._height = DefaultIfNonPositive(height, nameof(_height));
+        Width = DefaultIfNonPositive(width, nameof(Width));
+        _height = DefaultIfNonPositive(height, nameof(_height));
     }
 
     private int DefaultIfNonPositive(int value, string name)
@@ -58,8 +59,43 @@ class Rectangle
         return value;
     }
 
+    // Modern way that is shorter if dont need special validation
+    public int Width { get; private set; }
+
+    // Traditional way to make get/set accessors in property. This is a property, while the _width is a field.
+    //public int Width
+    //{
+    //    get { return _width; }
+    //    set
+    //    {
+    //        if (value <= 0)
+    //        {
+    //            Console.WriteLine("Value must be greater than 0.");
+    //            _width = 1;
+    //        } else
+    //        {
+    //            _width = value;
+    //        }
+    //    }
+    //}
+
+    // Can also do
+    //private int _width;
+    //public int Width
+    //{
+    //    get => _width;
+    //    set => _width = value;
+    //}
+
     public int Area()
     {
-        return this._width * this._height;
+        return Width * _height;
     }
 }
+
+// Fields vs properties
+// Fields are like variables and properties are method-like
+// Fields have single access modifier, properties have seperate accessor modifiers for getter and setter.
+//Fields have no separate getter and setter while properties getter or setter can be removed
+// Fields cannot be overriden in derived classes while properties can.
+// Fields should always be private, properties can safely be public.

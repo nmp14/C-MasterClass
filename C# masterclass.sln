@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoList", "TodoList\TodoLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Calculator.csproj", "{3C33DF7D-55C4-41C6-AF8F-6B296C67809D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP-DateTime", "OOP-DateTime\OOP-DateTime.csproj", "{7E7BFA4B-F318-47EF-B61B-DC31829E6AA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP-DateTime\OOP.csproj", "{7E7BFA4B-F318-47EF-B61B-DC31829E6AA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Overloading", "Overloading\Overloading.csproj", "{83D6D0AF-A9AB-4B96-AC62-4B0A5922C083}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Overloading", "Overloading\Overloading.csproj", "{83D6D0AF-A9AB-4B96-AC62-4B0A5922C083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
