@@ -51,7 +51,7 @@ internal class Program
 
             Console.WriteLine($"Incorrect guess. Try again. {attempts} remaining");
         } while (attempts > 0 && !isGuessSuccessful);
-        Console.WriteLine("You lose :(");
+        Console.WriteLine($"You lose :(. The number was {die.Value}");
         Console.ReadKey();
     }
 }
